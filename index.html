@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudNet</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/profile.css">
+    <link rel="stylesheet" href="styles/tracker.css">
+</head>
+<body>
+
+    <div class="apps-main-container">
+    <!-- Sidebar -->
+   <div class="sidebar">
+    <img src="assets/icons/logo.png" alt="logo" id="logo">
+
+    <ul class="menu">
+            <li><a id="nav-home"><i class="fa-regular fa-house page-icon"></i><span>Home</span></a></li>
+            <li><a id="nav-tracker"><i class="fa-regular fa-rectangle-list page-icon"></i> <span>Tracker</span></a></li>
+            <li><a id="nav-chatbot"> <i class="fa-regular fa-message page-icon"></i><span>Chat Bot</span></a></li>
+            <li><a id="nav-profile"><i class="fa-regular fa-user page-icon"></i><span>Profile</span></a></li>
+    </ul>
+   </div>
+
+   <!-- Main content -->
+
+   <!-- Home -->
+ <div id="home">
+    <div class="content-home">
+        <div class="heading">
+            <h1>Welcome to StudNet !</h1>
+            <p>Your personal productivity dashboard.  
+Track your habits, stay organized, and get instant help from the AI ChatBot.
+</p>
+</div>
+    </div>
+
+    <!-- Right Side Container -->
+
+     <div class="mini-container">
+        <div class="mini-tracker">
+            <h2>Habbit Tracker</h2>
+            <img src="assets/icons/tracker-logo.png" alt="tracker-logo">
+        </div>
+        <div class="mini-chatbot">
+            <h2>Chat Bot</h2>
+            <img src="assets/icons/chatbot-logo.png" alt="chatbot-logo">
+        </div>
+        </div>
+        </div>
+
+        <!-- Tracker -->
+
+        <div id="tracker">
+            <div class="tracker-container">
+                <div class="tracker">
+                    <h1>Tracker</h1>
+                    <div class="tracker-main">
+                        <div class="task-input-container">
+                    <input type="text" name="task" id="task-input" placeholder="Enter Your Task"> 
+                    <button id="add-task" 
+                    onclick="addTask();"
+                    >Add</button>
+                    </div>
+                    <div class="task-list-container">
+                        <ul class="task-list" >
+                            
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- chat Bot -->
+
+        <div id="chatbot">
+            <h1>ChatBot</h1>
+        </div>
+
+        <!-- Profile -->
+
+        <div id="profile">
+
+                <!-- profile view mode -->
+
+                <div class="profile-view">
+                    <h1>Your Profile</h1>
+                    <img src="assets/images/profile-pic.png" alt="default-profile" id="default-avatar">
+
+                    <button id="profile-edit-btn">Edit Profile</button>
+
+                <div class="details">
+                    <span>Name:</span> <p id="user-name">Alex </p>
+                    <span>Bio:</span> <P id="user-bio"> Aspiring Software Developer </P>
+                    <span>Degree:</span> <p id="user-degree"> BCA,BTech,BBA, etc </p>
+                    <span>College:</span> <p id="user-college">Your College Name</p>
+                    </div>
+
+                </div>
+
+                <!-- Profile Edit mode -->
+
+                <div class="profile-edit">
+                    <h1>Edit Profile</h1>
+                    <img src="assets/images/edit-profile-pic.png" alt="default-profile" id="input-avatar">
+                    <input type="file" id="user-avatar" accept="image/*">
+
+                    <div class="edit-btns">
+                    <button id="profile-back-btn">Go Back</button>
+                    <button id="profile-save-btn">Save Profile</button>
+                    </div>
+
+                    <div class="profile-form">
+                     <div class="user-inputs">
+                        <label for="name">Name</label>
+                        <input type="text" id="user-input-name" placeholder="Enter Your Name">
+                     </div>
+
+                     <div class="user-inputs">
+                        <label for="bio">Bio</label>
+                        <input type="text" id="user-input-bio" placeholder="Write Something About You">
+                        </div>
+
+                       <div class="user-inputs">
+                        <label for="degree">Degree</label>
+                        <input type="text" id="user-input-degree" placeholder="BCA , BTech , etc">
+                            </div>
+
+                          <div class="user-inputs">
+                        <label for="college">College Name</label>
+                        <input type="text" id="user-input-college" placeholder="Your College Name">
+                       </div>
+
+                    </div>
+                </div>
+        </div>
+
+        </div>
+
+        <!-- Javascript Links -->
+        <script src="scripts/router.js"></script>
+        <script src="scripts/modules/profile.js"></script>
+        <script src="scripts/modules/tracker.js"></script>
+</body>
+</html>
+
+

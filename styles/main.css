@@ -1,0 +1,31 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+html, body{
+    padding: 0;
+    margin: 0;
+}
+
+.apps-main-container{
+    display: flex;
+    height: 100vh;
+    background-color: #bdc3c7;
+    overflow-x: hidden;
+}
+
+#tracker , #chatbot , #profile{
+    display: none;
+}
+
+
+ul li i{
+    margin-right: 10px;
+}
+
+
+
