@@ -1,108 +1,105 @@
-#tracker{
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    background-color: #0F172A;
+#tracker {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #0f172a;
 }
 
-.tracker-container{
-    margin: 1rem;
-    border-radius: 5px;
-    background-color: #F1F5F9;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.tracker-container {
+  margin: 1rem;
+  border-radius: 5px;
+  background-color: #f1f5f9;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.tracker{
-    height: 90%;
-    width: 90%;
-    background-color: #fff;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
+.tracker {
+  height: 90%;
+  width: 90%;
+  background-color: #fff;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
 }
 
-.tracker h1{
-    text-align: center;
+.tracker h1 {
+  text-align: center;
 }
 
-.tracker-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+.tracker-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
-.task-input-container{
-    width: 90%;
-    margin: 1rem; 
-    display: flex;
+.task-input-container {
+  width: 90%;
+  margin: 1rem;
+  display: flex;
 }
 
-.task-input-container button{
-    width: 10%;
-    margin-left: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #06B6D4;
-    color: #fff;
-    transition: transform 0.3s ease-out;
+.task-input-container button {
+  width: 10%;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #06b6d4;
+  color: #fff;
+  transition: transform 0.3s ease-out;
 }
 
-.task-input-container button:hover{
-    transform: scale(1.1);
+.task-input-container button:hover {
+  transform: scale(1.1);
 }
 
-#task-input{
-    width: 100%;
-    height: 2rem;
-    border-radius: 5px;
-    padding: 0 5px;
+#task-input {
+  width: 100%;
+  height: 2rem;
+  border-radius: 5px;
+  padding: 0 5px;
 }
 
-.task-list-container{
-    width: 90%;
-    min-height: 50px;
-    max-height: 30%;
-    border-radius: 5px ;
-    border-bottom: 1px solid #0F172A;
+.task-list-container {
+  width: 90%;
+  height: 75%;
 }
 
-.task-list{
-    width: 100%;
-    height: 100%;
-    overflow-x: auto;
+.task-list {
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
 }
 
-.task-list li{
-    list-style: none;
-    padding: 1rem;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.20);
-    border-radius: 5px;
-    transition: 0.3sec ease;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.task-list li {
+  list-style: none;
+  padding: 1rem;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  transition: 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease;
 }
 
-.task-list li:hover{
-    background: #f1f1f1;
+.task-list li:hover {
+  background: #f1f1f1;
+  transform: scale(1.001);
 }
-
 
 input[type="checkbox"] {
-  accent-color:#0F172A;  
+  accent-color: #0f172a;
 }
 
-
-.task-content{
-    font-size: 18px;
-     flex: 1;
+.task-content {
+  font-size: 18px;
+  flex: 1;
   text-align: left;
   word-break: break-word;
   padding-left: 10px;
@@ -111,7 +108,7 @@ input[type="checkbox"] {
 .dlt-task-btn {
   background: transparent;
   border: none;
-  color: #0F172A;
+  color: #0f172a;
   font-size: 18px;
   cursor: pointer;
   transition: 0.2s;
@@ -119,4 +116,85 @@ input[type="checkbox"] {
 
 .dlt-task-btn:hover {
   color: #ff3b3b;
+}
+
+.alert-container {
+  position: fixed;
+  height: 400px;
+  width: 600px;
+  top: 20%;
+  left: 40%;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #0f172a;
+  display: none;
+  border-radius: 5px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.alert-container.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.alert-container h1 {
+  text-align: center;
+  margin: 20px;
+  color: #06b6d4;
+}
+
+.alert-container button {
+  width: 50%;
+  background-color: #06b6d4;
+  color: #fff;
+  height: 50px;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.alert-container button:hover {
+  transform: scale(1.1);
+}
+
+.alert-audio {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+.progress-wrapper {
+  width: 100%;
+  margin: 15px 0;
+}
+
+.progress-text {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+  color: #0f172a;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #e5e7eb; /* light gray */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background-color: #06b6d4; /* YOUR COLOR */
+  transition: width 0.4s ease;
 }
