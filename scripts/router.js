@@ -2,6 +2,7 @@ const home = document.getElementById("nav-home");
 const tracker = document.getElementById("nav-tracker");
 const chatBot = document.getElementById("nav-chatbot");
 const profile = document.getElementById("nav-profile");
+const chatProfileNav = document.getElementById("chat-profile-nav");
 
 
 const homeSection = document.querySelector("#home");
@@ -31,6 +32,13 @@ chatBot.addEventListener('click', () => {
 });
 
 profile.addEventListener('click', () => {
+    homeSection.style.display = "none";
+    trackerSection.style.display = "none";
+    chatBotSection.style.display = "none";
+    profileSection.style.display = "flex";
+});
+
+chatProfileNav.addEventListener('click', () => {
     homeSection.style.display = "none";
     trackerSection.style.display = "none";
     chatBotSection.style.display = "none";

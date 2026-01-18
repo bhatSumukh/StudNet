@@ -7,8 +7,6 @@
 }
 
 .tracker-container {
-  margin: 1rem;
-  border-radius: 5px;
   background-color: #f1f5f9;
   height: 100%;
   width: 100%;
@@ -187,7 +185,7 @@ input[type="checkbox"] {
 .progress-bar {
   width: 100%;
   height: 10px;
-  background-color: #e5e7eb; /* light gray */
+  background-color: #e5e7eb;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -195,6 +193,6 @@ input[type="checkbox"] {
 .progress-fill {
   height: 100%;
   width: 0%;
-  background-color: #06b6d4; /* YOUR COLOR */
+  background-color: #06b6d4;
   transition: width 0.4s ease;
 }

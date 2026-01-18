@@ -13,8 +13,10 @@
     />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/home.css" />
+    <link rel="stylesheet" href="styles/sidebar.css" />
     <link rel="stylesheet" href="styles/profile.css" />
     <link rel="stylesheet" href="styles/tracker.css" />
+    <link rel="stylesheet" href="styles/chatbot.css" />
   </head>
   <body>
     <div class="apps-main-container">
@@ -117,7 +119,47 @@
       <!-- chat Bot -->
 
       <div id="chatbot">
-        <h1>ChatBot</h1>
+        <div class="chatbot-container">
+          <div class="chat-bot">
+            <div class="chat-head">
+              <div class="logo">
+                <h2>Stud Bot</h2>
+              </div>
+              <a href="#nav-profile" id="chat-profile-nav"><div class="chatbot-profile">
+                <span id="chat-user-name">User</span>
+                <img
+                  id="chat-user-avatar"
+                  src="assets/images/profile-pic.png"
+                />
+              </div>
+              </a>
+            </div>
+
+            <!-- <div id="chatbot-hero">
+              <h1>Good to see you &nbsp; <span id="chat-user-name-hero">User</span> </h1>
+            </div> -->
+
+            <div class="chat-container">
+             
+              <div class="ai-chat-box">
+                <img src="assets/icons/chatbot-icon.webp" alt="aiImage" id="aiImage">
+                  <div class="ai-chat-area">
+                  Welcome&nbsp; <span id="chat-user-name-hero">User</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-input-wrapper">
+              <!-- <textarea
+                id="chat-input"
+                placeholder="Type a message..."
+              ></textarea> -->
+
+              <input type="text" id="chat-input" placeholder="Type a message">
+              <button id="send-btn" onclick="displayChat()"><i class="fa-solid fa-arrow-up"></i></button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Profile -->
@@ -208,5 +250,6 @@
     <script src="scripts/router.js"></script>
     <script src="scripts/modules/profile.js"></script>
     <script src="scripts/modules/tracker.js"></script>
+    <script src="scripts/modules/chatbot.js"></script>
   </body>
 </html>

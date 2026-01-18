@@ -16,8 +16,6 @@ tasks.forEach((task) => {
 });
 updateProgress();
 
-// ---------------- FUNCTIONS ----------------
-
 // Add new task
 function addTask() {
   const inputText = taskInput.value.trim();

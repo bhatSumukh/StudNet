@@ -21,7 +21,7 @@ const profileInputBio = document.getElementById("user-input-bio");
 const profileInputDegree = document.getElementById("user-input-degree");
 const profileInputCollege = document.getElementById("user-input-college");
 
-let currentAvatar = null;
+let currentAvatar = null;  // import this to chat bot
 const savedAvatar = localStorage.getItem("profileAvatar");
 
 profileName.innerText = localStorage.getItem("profileName") || "User";
@@ -84,7 +84,7 @@ profileSaveBtn.addEventListener("click", () => {
   }
 
   if (currentAvatar) {
-    currentViewAvatar.src = currentAvatar;
+    currentViewAvatar.src = currentAvatar;  // import this to chat bot
     localStorage.setItem("profileAvatar", currentAvatar);
   }
 
