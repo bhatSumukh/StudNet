@@ -1,6 +1,17 @@
-import fetch from "node-fetch";
-
 export async function handler(event) {
+  // ✅ HANDLE CORS + PREFLIGHT
+  if (event.httpMethod === "OPTIONS") {
+    return {
+      statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+      },
+      body: "",
+    };
+  }
+
   try {
     const body = JSON.parse(event.body || "{}");
     const message = body.message;
@@ -8,6 +19,9 @@ export async function handler(event) {
     if (!message) {
       return {
         statusCode: 400,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
         body: JSON.stringify({ error: "Message is required" }),
       };
     }
@@ -15,6 +29,9 @@ export async function handler(event) {
     if (!process.env.GEMINI_API_KEY) {
       return {
         statusCode: 500,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
         body: JSON.stringify({ error: "API key missing" }),
       };
     }
@@ -31,7 +48,7 @@ export async function handler(event) {
             },
           ],
         }),
-      }
+      },
     );
 
     const data = await response.json();
@@ -39,6 +56,9 @@ export async function handler(event) {
     if (!response.ok) {
       return {
         statusCode: response.status,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
         body: JSON.stringify({
           error: data.error?.message || "Gemini API error",
         }),
@@ -47,16 +67,20 @@ export async function handler(event) {
 
     return {
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
       body: JSON.stringify({
-        reply:
-          data.candidates?.[0]?.content?.parts?.[0]?.text ||
-          "No response",
+        reply: data.candidates?.[0]?.content?.parts?.[0]?.text || "No response",
       }),
     };
   } catch (err) {
     console.error("Function error:", err);
     return {
       statusCode: 500,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
       body: JSON.stringify({ error: "Server error" }),
     };
   }
