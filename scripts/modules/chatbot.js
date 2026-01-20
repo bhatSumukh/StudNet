@@ -30,7 +30,7 @@ const chatInput = document.querySelector("#chat-input");
 const chatContainer = document.querySelector(".chat-container");
 
 // ✅ ONLY Netlify Function URL (NO GOOGLE API HERE)
-const API_URL = "/.netlify/functions/chat";
+const API_URL = "/.netlify/functions/chat.js";
 
 let user = {
   data: null,
