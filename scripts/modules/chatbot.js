@@ -63,6 +63,7 @@ async function generateResponse(aiChatBox) {
     });
 
     const data = await response.json();
+    
 
     aiChatArea.classList.remove("typing");
     aiChatArea.innerHTML = "";

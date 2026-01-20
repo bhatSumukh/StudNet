@@ -1,5 +1,4 @@
 export async function handler(event) {
-  // ✅ HANDLE CORS + PREFLIGHT
   if (event.httpMethod === "OPTIONS") {
     return {
       statusCode: 200,
@@ -11,6 +10,9 @@ export async function handler(event) {
       body: "",
     };
   }
+
+  console.log("EVENT BODY:", event.body);
+  console.log("HAS API KEY:", !!process.env.GEMINI_API_KEY);
 
   try {
     const body = JSON.parse(event.body || "{}");
