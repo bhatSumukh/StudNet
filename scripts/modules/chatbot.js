@@ -30,7 +30,7 @@ const chatInput = document.querySelector("#chat-input");
 const chatContainer = document.querySelector(".chat-container");
 
 // ✅ ONLY Netlify Function URL (NO GOOGLE API HERE)
-const API_URL = "/.netlify/functions/chat.js";
+const API_URL = "/.netlify/functions/chat";
 
 let user = {
   data: null,
@@ -39,8 +39,7 @@ let user = {
 // ---------------- USER AVATAR ----------------
 function getUserAvatar() {
   return (
-    localStorage.getItem("profileAvatar") ||
-    "assets/images/profile-pic.png"
+    localStorage.getItem("profileAvatar") || "assets/images/profile-pic.png"
   );
 }
 
@@ -69,14 +68,12 @@ async function generateResponse(aiChatBox) {
     aiChatArea.innerHTML = "";
 
     if (!response.ok) {
-      aiChatArea.innerText =
-        data.error || "AI is temporarily unavailable.";
+      aiChatArea.innerText = data.error || "AI is temporarily unavailable.";
       return;
     }
 
     aiChatArea.innerText = data.reply || "No response from AI";
     chatContainer.scrollTop = chatContainer.scrollHeight;
-
   } catch (error) {
     console.error("Network error:", error);
     aiChatArea.classList.remove("typing");
@@ -126,5 +123,3 @@ chatInput.addEventListener("keydown", (e) => {
     handleChatResponse(chatInput.value);
   }
 });
-
-
